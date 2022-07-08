@@ -55,6 +55,19 @@ tasks {
         }
     }
 }
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.ziolkow.Application'
+        )
+    }
+}
+
+
+task stage(dependsOn: ['build', 'clean'])
+
+build.mustRunAfter clean
 graalvmNative.toolchainDetection = false
 micronaut {
     runtime("netty")
