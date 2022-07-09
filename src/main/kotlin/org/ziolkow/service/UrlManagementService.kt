@@ -12,6 +12,7 @@ interface UrlManagementService {
     fun addUrl(urlDTO: UrlDTO) : UrlDTO
 
     fun getUrl(id : UUID) : UrlDTO
+    fun findByShortUrl(urlShort : String): String
 
 }
 
@@ -28,6 +29,11 @@ open class UrlManagementServiceImpl(
 
     override fun getUrl(id: UUID): UrlDTO {
         return urlRepository.findById(id).get().toUrlDTO()
+    }
+
+    override fun findByShortUrl(urlShort: String): String {
+        val urlEntity = urlRepository.findByUrlShort(urlShort)
+        return urlEntity.urlLong
     }
 
 }

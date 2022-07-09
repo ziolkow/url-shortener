@@ -17,13 +17,15 @@ interface RedirectController {
 
 @Controller("/v1/redirect")
 class RedirectControllerControllerImpl (
+    private val urlManagementService : UrlManagementService
     ) : RedirectController {
 
     private val logger = LoggerFactory.getLogger(UrlManagementControllerImpl::class.java)
 
     @Throws(URISyntaxException::class)
     override fun redirect(urlShort: String): HttpResponse<String> {
-        val location = URI("https://www.google.com/?client=safari")
+        val urlLong = urlManagementService.findByShortUrl(urlShort)
+        val location = URI(urlLong)
         return HttpResponse.redirect(location)
     }
 

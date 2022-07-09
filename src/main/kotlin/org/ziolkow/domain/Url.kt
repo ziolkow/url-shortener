@@ -33,7 +33,7 @@ class Url {
         fun fromUrlDTO(urlDTO: UrlDTO): Url {
             val url = Url()
             url.id = UUID.randomUUID()
-            url.urlShort = urlDTO.urlLong
+            url.urlShort = UUID.randomUUID().toString().substring(1..5)
             url.urlLong = urlDTO.urlLong
             return url
         }
@@ -43,4 +43,6 @@ class Url {
 
 
 @Repository
-interface UrlRepository : JpaRepository<Url,UUID> {}
+interface UrlRepository : JpaRepository<Url,UUID> {
+    fun findByUrlShort(urlShort: String): Url
+}
