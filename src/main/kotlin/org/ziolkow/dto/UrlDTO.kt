@@ -1,6 +1,6 @@
-package org.ziolkow.controller
+package org.ziolkow.dto
 
-import java.util.UUID
+import java.util.*
 
 data class UrlDTO (
     val id : UUID?,

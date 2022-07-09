@@ -2,7 +2,7 @@ package org.ziolkow.domain
 
 import io.micronaut.data.annotation.Repository
 import io.micronaut.data.jpa.repository.JpaRepository
-import org.ziolkow.controller.UrlDTO
+import org.ziolkow.dto.UrlDTO
 import java.util.UUID
 import javax.persistence.Column
 import javax.persistence.Entity

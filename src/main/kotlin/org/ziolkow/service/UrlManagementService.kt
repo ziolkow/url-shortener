@@ -1,7 +1,7 @@
 package org.ziolkow.service
 
 import jakarta.inject.Singleton
-import org.ziolkow.controller.UrlDTO
+import org.ziolkow.dto.UrlDTO
 import org.ziolkow.domain.Url
 import org.ziolkow.domain.UrlRepository
 import java.util.UUID
