@@ -15,7 +15,7 @@ interface RedirectController {
     fun redirect(@PathVariable("urlShort") urlShort: String) : HttpResponse<String>
 }
 
-@Controller("/")
+@Controller("/red")
 class RedirectControllerControllerImpl (
     private val urlManagementService : UrlManagementService
     ) : RedirectController {
