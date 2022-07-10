@@ -29,9 +29,12 @@ netty:
 jpa.default.properties.hibernate.hbm2ddl.auto: update
 
 endpoints:
+  all:
+    port: 8085
   info:
     enabled: true
     sensitive: false
   health:
     enabled: true
-    sensitive: true
+    sensitive: false
+    details-visible: anonymous
